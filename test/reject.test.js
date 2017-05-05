@@ -18,4 +18,18 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+
+  it('returns an empty array if no callback is passed', () => {
+    const arr = ['1', 'a', 3];
+    result = _.reject(arr);
+    expect(result.length).toBe(0);
+    expect(result).toEqual([]);
+  });
+
+  it('filters out all of the elements equal to 1', () => {
+    const arr = [0,1,0,0,2,1,0,1];
+    result = _.reject(arr, num => num === 1);
+    expect(result.length).toBe(5);
+    expect(result).toEqual([0,0,0,2,0]);
+  });
 });
