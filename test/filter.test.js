@@ -23,4 +23,18 @@ describe('filter()', () => {
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
   });
+
+  it('returns all elements if no callback is passed', () => {
+    const arr = ['1', 'a', 3];
+    result = _.filter(arr);
+    expect(result.length).toBe(3);
+    expect(result).toEqual(['1', 'a', 3]);
+  });
+
+  it('filters out all of the elements not equal to 1', () => {
+    const arr = [0,1,0,0,2,1,0,1];
+    result = _.filter(arr, num => num === 1);
+    expect(result.length).toBe(3);
+    expect(result).toEqual([1,1,1]);
+  });
 });
