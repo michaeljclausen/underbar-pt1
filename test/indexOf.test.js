@@ -26,4 +26,9 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('searches the entire array if given a negative index', () => {
+    const arr = ['foo', 'bar', 'baz', 'quux', 'quuux'];
+    expect(_.indexOf(arr, 'baz', -1)).toBe(2);
+  });
+
 });

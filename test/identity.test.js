@@ -20,4 +20,10 @@ describe('identity()', () => {
     };
     expect(_.identity(val)).toBe(val);
   });
+  it('returns undefined if passed no arguments', () =>{
+    expect(_.identity()).toBe(undefined);
+  });
+  it('returns only the first argument if passed multiple arguments', () =>{
+    expect(_.identity(1,2,3)).toBe(1);
+  });
 });
