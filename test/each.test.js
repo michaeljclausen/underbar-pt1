@@ -39,5 +39,13 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+  
+  it('adds 1 to each element in the array', () => {
+    arr = [1,2,3];
+    _.each(arr, function(el, index, array){
+      array[index] = el + 1;
+    });
+    expect(arr).toEqual([2,3,4]);
+  });
 });
 
