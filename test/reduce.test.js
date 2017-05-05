@@ -13,4 +13,9 @@ describe('reduce()', () => {
     expect(result).toEqual(15);
   });
 
+  it('multiplies the accumulator by the element if the element is greater than 2', () => {
+    const nums = [1, 2, 3, 4, 5];
+    const result = _.reduce(nums, (acc, num) => num > 2 ? acc * num : acc);
+    expect(result).toEqual(60);
+  });
 });
