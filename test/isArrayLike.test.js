@@ -18,4 +18,11 @@ describe('isArrayLike()', () => {
     };
     expect(_.isArrayLike(nonArrayLikeObj)).toBe(false);
   });
+
+  it('returns false for an object whose length is < 0', () => {
+    const arrayLikeObj = {
+      length: -1
+    };
+    expect(_.isArrayLike(arrayLikeObj)).toBe(false);
+  });
 });
